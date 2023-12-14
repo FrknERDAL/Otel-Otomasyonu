@@ -1,0 +1,35 @@
+﻿@model MvcOTEL.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "Kirala";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:25px">
+        <label>Müşteri ID</label>
+        @*@Html.TextBoxFor(x => x.ÜYE, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.TBLMUSTERI.ID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:25px">
+        <label>Oda ID</label>
+        @*@Html.TextBoxFor(x => x.ODA, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.TBLOTEL.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="font-size:20px">Rezervasyon</label>
+        <input type="date" class="form-control" name="ALISTARIH"
+               id="rent-date" />
+        <p style="color:red;">@ViewBag.KiralamaError</p>
+    </div>
+    <div style="margin-top:15px">
+        <label style="font-size:20px">Teslim Tarihini Yazın</label>
+        <input type="date" class="form-control" name="VERISTARIHI" />
+        <p style="color:red;">@ViewBag.TeslimError</p>
+    </div>
+    <div style="margin-top:25px">
+        <button class="btn btn-success">Rezervasyon</button>
+        <input type="hidden" value="False" name="ISLEMDURUM" />
+    </div>
+</form>
+

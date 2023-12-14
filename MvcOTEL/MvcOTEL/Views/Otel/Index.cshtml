@@ -1,0 +1,44 @@
+﻿@using MvcOTEL.Models.Entity
+@model List<TBLOTEL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Oda işlemleri  <a href="/Otel/OdaEkle/" class="btn btn-success">Oda Ekle</a></h2> 
+@using (Html.BeginForm("Index", "Otel", FormMethod.Get))
+{
+       <div style="margin-bottom:15px; margin-top:15px;">
+           <b>Aranacak Oda No</b> @Html.TextBox("p")
+           <input type="submit" value="Ara" />
+           
+       </div>
+}
+<div style="margin-bottom:10px; margin-top:10px;">
+    <input type="text" class="form-control"/>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Oda No</th>
+        <th>Oda Türü</th>
+        <th>Otel Şube</th>
+        <th>Oda Kat</th>
+        <th>Yatak Sayısı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var o in Model)
+    {
+                <tr>
+                    <td>@o.ID</td>
+                    <td>@o.NO</td>
+                    <td>@o.TBLKATEGORI.AD</td>
+                    <td>@o.TBLSUBE.AD</td>
+                    <td>@o.KAT</td>
+                    <td>@o.YATAK</td>
+                    <td>@o.DURUM</td>
+                    <td><a href="/Otel/OtelSil/@o.ID" class="btn btn-warning">Sil</a></td>
+                </tr>
+        }
+</table>

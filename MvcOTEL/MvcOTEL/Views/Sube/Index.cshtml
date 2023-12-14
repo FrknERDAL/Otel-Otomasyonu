@@ -1,0 +1,26 @@
+﻿@using MvcOTEL.Models.Entity
+@model List<TBLSUBE>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Şubeler</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>DETAY</th>
+        <th>SİL</th>
+    </tr>
+    @foreach (var y in Model)
+    {
+                <tr>
+                    <td> @y.ID</td>
+                    <td> @y.AD</td>
+                    <td> @y.DETAY</td>
+                    <td> @Html.ActionLink("Sil", "ŞubeSil", new { id = y.ID }, new { @class = "btn btn-warning" , onclick = "return confirm('Silmek İstiyor musunuz?')"})</td>                   
+                </tr>
+            }
+</table>
+<a class="btn btn-success" href="/Sube/ŞubeEkle/">Şube Ekle</a>

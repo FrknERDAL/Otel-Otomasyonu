@@ -1,0 +1,28 @@
+﻿@using MvcOTEL.Models.Entity;
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Teslim Edilmiş Odalar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem ID</th>
+        <th>Oda No</th>
+        <th>Müşteri</th>
+        <th>Rezervasyon Tarihi</th>
+        <th>Teslim Tarihi</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.TBLOTEL.NO</td>
+            <td>@k.TBLMUSTERI.ADI&nbsp @k.TBLMUSTERI.SOYAD</td>
+            <td>@Convert.ToDateTime(k.ALISTARIH).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(k.VERISTARIHI).ToString("dd/MM/yyyy")</td>          
+        </tr>
+    }
+</table>

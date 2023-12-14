@@ -1,0 +1,25 @@
+﻿@using MvcOTEL.Models.Entity
+@model List<TBLKATEGORI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kategoriler      <a href="/Kategori/KategoriEkle/" class="btn btn-success">Kategori Ekle</a></h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kategori ID</th>
+        <th>Kategori ADI</th>
+        <th>SİL</th>
+    </tr>
+    @foreach (var ktg in Model)
+    {
+        <tr>
+            <td>@ktg.ID</td>
+            <td>@ktg.AD</td>
+            <td><a href="/Kategori/KategoriSil/@ktg.ID/" class="btn btn-info">Sil</a></td>
+        </tr>
+    }
+</table>
+

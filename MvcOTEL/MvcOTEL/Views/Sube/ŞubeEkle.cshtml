@@ -1,0 +1,20 @@
+﻿@model MvcOTEL.Models.Entity.TBLSUBE
+@{
+    ViewBag.Title = "ŞubeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:25px">
+        <label>Şube Adı</label>
+        @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:25px">
+        <label>Şube Adres</label>
+        @Html.TextAreaFor(x => x.DETAY, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:25px">
+        <button class="btn btn-success">Şube Ekle</button>
+    </div>
+</form>
+

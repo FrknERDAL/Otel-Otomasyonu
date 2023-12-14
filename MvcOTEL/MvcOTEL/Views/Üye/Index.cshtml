@@ -1,0 +1,33 @@
+﻿@using MvcOTEL.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLMUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Müşteriler <a href="/Üye/UyeEkle/" class="btn btn-success">Müşteri Ekle</a></h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>Müşteri ADI</th>
+        <th>Müşteri SOYADI</th>       
+        <th>Telefon</th>
+        <th>Sil</th>
+        <th>Müşteri Geçmişi</th>
+    </tr>
+    @foreach (var uye in Model)
+            {
+                <tr>
+                    <td>@uye.ID</td>
+                    <td>@uye.ADI</td>
+                    <td>@uye.SOYAD</td>                             
+                    <td>@uye.TELEFON</td>
+                    <td><a href="/Üye/UyeSil/@uye.ID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Üye/MüsteriGeçmiş/@uye.ID" class="btn btn-success">Geçmiş İşlemler</a></td>
+                </tr>
+            }
+</table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new { sayfa }))

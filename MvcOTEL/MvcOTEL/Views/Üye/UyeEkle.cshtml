@@ -1,0 +1,48 @@
+﻿@model MvcOTEL.Models.Entity.TBLMUSTERI
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Müşteri Adı</label>
+
+        @Html.TextBoxFor(x => x.ADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ADI, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Müşteri SoyAdı</label>
+
+        @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Müşteri Mail</label>
+
+        @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MAIL, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kullanıcı Adı</label>
+
+        @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.KULLANICIADI, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Şifre</label>
+
+        @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SIFRE, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Telefon No</label>
+
+        @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TELEFON, "", new { @style = "color:Red" })
+    </div>
+    <div style="margin-top:5px">
+        <button class="btn btn-info" id="btn">Müşteri Ekle</button>
+    </div>
+</form>

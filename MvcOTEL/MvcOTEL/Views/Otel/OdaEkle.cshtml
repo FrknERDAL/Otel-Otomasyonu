@@ -1,0 +1,36 @@
+﻿@model MvcOTEL.Models.Entity.TBLOTEL
+@{
+    ViewBag.Title = "OdaEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:25px">
+        <label>Oda No</label>
+
+        @Html.TextBoxFor(x => x.NO, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:25px">
+        <label>Oda Kategori</label>
+        @Html.DropDownListFor(k=>k.TBLKATEGORI.ID,(List<SelectListItem>)ViewBag.dgr1,new {@class="form-control"}) 
+    </div>
+    <div style="margin-top:25px">
+        <label>Oda Şube</label>
+        @Html.DropDownListFor(k=>k.TBLSUBE.ID,(List<SelectListItem>)ViewBag.dgr2,new {@class="form-control"})
+    </div>
+    <div style="margin-top:25px">
+        <label>Oda Kat</label>
+        @Html.TextBoxFor(x => x.KAT, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:25px">
+    <label>Yatak Sayısı</label>
+    @Html.TextBoxFor(x => x.YATAK, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:25px">
+        <button class="btn btn-success">Oda Ekle</button>
+    </div>
+    <input type="hidden" name="Durum" value="True" />
+</form>
+

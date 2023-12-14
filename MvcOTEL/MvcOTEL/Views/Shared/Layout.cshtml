@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #083764;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #a0eef1;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f3e920;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 20px;}
+}
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="#"><i class="glyphicon glyphicon-home"></i> &nbsp; Ana Sayfa </a>
+        <a href="/Kategori/Index/"><i class="glyphicon glyphicon-th"></i> &nbsp; Kategoriler </a>
+        <a href="/Sube/Index/"><i class="glyphicon glyphicon-globe"></i> &nbsp; Oteller </a>
+        <a href="/Otel/Index/"><i class="glyphicon glyphicon-star"></i> &nbsp; Odalar </a>
+        <a href="/Üye/Index"><i class="glyphicon glyphicon-user"></i> &nbsp; Müşteriler </a>      
+        <a href="/Kirala/Kirala/"><i class="glyphicon glyphicon-tent"></i> &nbsp; Oda Kirala </a>
+        <a href="/Kirala/Index/"><i class="glyphicon glyphicon-tent"></i> &nbsp; Oda Teslim </a>    
+        <a href="/ISLEM/Index"><i class="glyphicon glyphicon-dashboard"></i> &nbsp; İşlemler </a>
+        @*<a href="#"><i class="glyphicon glyphicon-cog"></i> &nbsp; Ayarlar </a>*@
+        <a href="/Login/GirisY/"><i class="glyphicon glyphicon-log-in"></i> &nbsp; Giriş </a>
+        <a href="#"><i class="glyphicon glyphicon-log-out"></i> &nbsp; Çıkış </a>
+
+    </div>
+
+    <div class="main">
+       @RenderBody() 
+    </div>
+
+</body>
+</html>
